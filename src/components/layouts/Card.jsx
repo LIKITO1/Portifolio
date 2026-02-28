@@ -16,21 +16,19 @@ function Card({title,img,tecnologias,description,link,git}){
         bootstrap:BootstrapIcon
     }
     return(
-        <div className="border p-5 flex flex-col items-center justify-center gap-4 rounded-2xl flex-wrap w-100">
+        <div className="border-y py-5 flex flex-col items-center justify-center gap-4 flex-wrap w-full">
             <h1 className="text-xl font-semibold">{title}</h1>
-            <img src={img} width={200} className="hover:cursor-pointer hover:shadow-[0_0_40px_gray]" onClick={()=>{const janela=window.open(link,"_blank");janela.focus()}}/>
-            <p className="text-gray-300 font-semibold w-[80%] text-center">{description}</p>
-            <span className="w-[95%] h-px bg-white"></span>
+            <img src={img} className="hover:cursor-pointer hover:shadow-[0_0_40px_gray] w-4/5" onClick={()=>{const janela=window.open(link,"_blank");janela.focus()}}/>
+            <p className="text-gray-300 font-semibold w-[80%] text-center text-lg">{description}</p>
             <div className="flex gap-4 items-center justify-center">
-                <h3>Código:</h3>
+                <h3 className="font-semibold text-lg">Código:</h3>
                 <GithubIcon className="size-8 hover:drop-shadow-[0_0_10px_white] hover:cursor-pointer" onClick={()=>{const janela=window.open(git,"_blank");janela.focus()}}/>
             </div>
-            <span className="w-[95%] h-px bg-white"></span>
-            <p className="text-gray-300 font-semibold">Tecnologias utilizadas:</p>
+            <p className="text-gray-300 font-semibold text-lg">Tecnologias utilizadas:</p>
             <div className="flex gap-5">
             {tecnologias&&tecnologias.map((valor)=>{
                 const Icon=icons[valor]
-                return <Icon className="size-8 hover:drop-shadow-[0_0_10px_white]"/>
+                return <Icon className="size-8 hover:drop-shadow-[0_0_10px_white]" key={icons[valor]}/>
             })}
             </div>
         </div>
