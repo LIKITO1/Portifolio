@@ -16,9 +16,9 @@ function Card({title,img,tecnologias,description,link,git}){
         bootstrap:BootstrapIcon
     }
     return(
-        <div className="border-y py-5 flex flex-col items-center justify-center gap-4 flex-wrap w-full">
+        <div className="border-y py-5 flex flex-col items-center justify-center gap-4 flex-wrap w-full sm:rounded-2xl sm:w-3/4 sm:border md:w-3/5 lg:w-2/5">
             <h1 className="text-xl font-semibold">{title}</h1>
-            <img src={img} className="hover:cursor-pointer hover:shadow-[0_0_40px_gray] w-4/5" onClick={()=>{const janela=window.open(link,"_blank");janela.focus()}}/>
+            <img src={img} className="hover:cursor-pointer hover:shadow-[0_0_40px_gray] w-4/5 shadow-[0_0_40px_gray] md:shadow-none" onClick={()=>{const janela=window.open(link,"_blank");janela.focus()}}/>
             <p className="text-gray-300 font-semibold w-[80%] text-center text-lg">{description}</p>
             <div className="flex gap-4 items-center justify-center">
                 <h3 className="font-semibold text-lg">Código:</h3>
